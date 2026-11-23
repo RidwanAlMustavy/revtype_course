@@ -12,9 +12,7 @@ import {
   PartyPopper, 
   ExternalLink,
   Info,
-  CheckCircle2,
-  Copy,
-  Check
+  CheckCircle2
 } from 'lucide-react';
 
 interface YouTubePlayerProps {
@@ -37,28 +35,6 @@ export default function YouTubePlayer({
   onReplayCourse,
 }: YouTubePlayerProps) {
   const [hasStarted, setHasStarted] = useState(false);
-  const [copied, setCopied] = useState(false);
-
-  const handleCopyLink = async () => {
-    if (!currentLesson) return;
-    const videoUrl = `https://youtube.com/shorts/${currentLesson.youtubeId}`;
-    try {
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        await navigator.clipboard.writeText(videoUrl);
-      } else {
-        const input = document.createElement('input');
-        input.value = videoUrl;
-        document.body.appendChild(input);
-        input.select();
-        document.execCommand('copy');
-        document.body.removeChild(input);
-      }
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch {
-      // ignore
-    }
-  };
 
   if (!currentLesson) {
     return (
@@ -251,39 +227,16 @@ export default function YouTubePlayer({
           <span className="hidden sm:inline">Previous Lesson</span>
         </button>
 
-        {/* Center: Replay & Copy Link Controls */}
-        <div className="flex items-center gap-2">
-          <button
-            type="button"
-            onClick={() => player.replayVideo()}
-            className="min-h-[38px] inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium text-text-muted hover:text-text-primary bg-dark-deep hover:bg-dark-hover border border-dark-border transition-colors focus:outline-none focus:ring-2 focus:ring-green-vivid"
-            aria-label="Replay current lesson"
-          >
-            <RotateCcw className="w-3.5 h-3.5 text-green-vivid" />
-            <span>Replay</span>
-          </button>
-
-          {/* Copy Link Button */}
-          <button
-            type="button"
-            onClick={handleCopyLink}
-            className="min-h-[38px] inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold text-text-primary bg-dark-deep hover:bg-dark-hover border border-dark-border hover:border-green-vivid/40 transition-colors focus:outline-none focus:ring-2 focus:ring-green-vivid"
-            aria-label="Copy direct video link"
-            title="Copy direct video link"
-          >
-            {copied ? (
-              <>
-                <Check className="w-3.5 h-3.5 text-green-vivid" />
-                <span className="text-green-vivid font-bold">Copied!</span>
-              </>
-            ) : (
-              <>
-                <Copy className="w-3.5 h-3.5 text-green-vivid" />
-                <span>Copy Link</span>
-              </>
-            )}
-          </button>
-        </div>
+        {/* Center: Replay Control */}
+        <button
+          type="button"
+          onClick={() => player.replayVideo()}
+          className="min-h-[38px] inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-medium text-text-muted hover:text-text-primary bg-dark-deep hover:bg-dark-hover border border-dark-border transition-colors focus:outline-none focus:ring-2 focus:ring-green-vivid"
+          aria-label="Replay current lesson"
+        >
+          <RotateCcw className="w-3.5 h-3.5 text-green-vivid" />
+          <span>Replay</span>
+        </button>
 
         {/* Right: Next Lesson */}
         <button
@@ -312,25 +265,6 @@ export default function YouTubePlayer({
               </span>
             )}
           </div>
-
-          <button
-            type="button"
-            onClick={handleCopyLink}
-            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-medium text-text-muted hover:text-green-vivid bg-dark-deep border border-dark-border hover:border-green-vivid/40 transition-colors"
-            title="Copy video link"
-          >
-            {copied ? (
-              <>
-                <Check className="w-3.5 h-3.5 text-green-vivid" />
-                <span className="text-green-vivid font-semibold">Copied!</span>
-              </>
-            ) : (
-              <>
-                <Copy className="w-3.5 h-3.5" />
-                <span>Copy Link</span>
-              </>
-            )}
-          </button>
         </div>
 
         <h3 className="text-xl sm:text-2xl font-bold text-text-primary">
