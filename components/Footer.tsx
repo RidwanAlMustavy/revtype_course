@@ -40,11 +40,6 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-xs text-text-muted">
               <li>
-                <a href="#overview" className="hover:text-green-vivid transition-colors">
-                  Overview
-                </a>
-              </li>
-              <li>
                 <a href="#lessons" className="hover:text-green-vivid transition-colors">
                   Video Lessons
                 </a>

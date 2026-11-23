@@ -7,7 +7,6 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { label: 'Overview', href: '#overview' },
     { label: 'Video Lessons', href: '#lessons' },
   ];
 

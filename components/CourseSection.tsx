@@ -66,7 +66,8 @@ export default function CourseSection() {
   }, [resetProgress, setCurrentLesson]);
 
   return (
-    <section id="lessons" className="pt-4 pb-16 lg:pt-6 lg:pb-24 bg-dark-bg relative">
+    <section id="lessons" className="pt-8 pb-16 lg:pt-12 lg:pb-24 bg-dark-bg relative">
+      <span id="overview" className="sr-only" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}

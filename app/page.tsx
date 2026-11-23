@@ -2,7 +2,6 @@
 
 import React from 'react';
 import Header from '@/components/Header';
-import Hero from '@/components/Hero';
 import CourseSection from '@/components/CourseSection';
 import Footer from '@/components/Footer';
 
@@ -14,10 +13,7 @@ export default function HomePage() {
 
       {/* Main Single Page Content */}
       <main id="main-content" className="flex-1">
-        {/* Section B: Hero */}
-        <Hero />
-
-        {/* Section E: Primary Video Course Player & Playlist */}
+        {/* Primary Video Course Player & Playlist */}
         <CourseSection />
       </main>
 
