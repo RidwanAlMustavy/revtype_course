@@ -92,7 +92,7 @@ export default function YouTubePlayer({
   };
 
   return (
-    <div className="flex flex-col space-y-5">
+    <div className="flex flex-col space-y-3.5">
       {/* Video Container (16:9 ratio) */}
       <div 
         className="relative aspect-video w-full rounded-card-lg bg-dark-deep border border-dark-border overflow-hidden shadow-card group select-none"
@@ -245,15 +245,15 @@ export default function YouTubePlayer({
 
       </div>
 
-      {/* External Player Control Toolbar (FR04, FR11 >=44px) */}
-      <div className="flex flex-wrap items-center justify-between gap-3 p-4 rounded-xl bg-dark-card border border-dark-border">
+      {/* External Player Control Toolbar (FR04, FR11) */}
+      <div className="flex flex-wrap items-center justify-between gap-2.5 p-3 rounded-xl bg-dark-card border border-dark-border">
         
         {/* Left: Previous Lesson */}
         <button
           type="button"
           disabled={!previousLesson}
           onClick={handlePreviousClick}
-          className="min-h-[44px] min-w-[44px] inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold text-text-primary bg-dark-deep hover:bg-dark-hover border border-dark-border disabled:opacity-40 disabled:cursor-not-allowed transition-colors focus:outline-none focus:ring-2 focus:ring-green-vivid"
+          className="min-h-[38px] inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs font-semibold text-text-primary bg-dark-deep hover:bg-dark-hover border border-dark-border disabled:opacity-40 disabled:cursor-not-allowed transition-colors focus:outline-none focus:ring-2 focus:ring-green-vivid"
           aria-label="Go to previous lesson"
         >
           <ChevronLeft className="w-4 h-4 text-green-vivid" />
@@ -265,10 +265,10 @@ export default function YouTubePlayer({
           <button
             type="button"
             onClick={() => player.replayVideo()}
-            className="min-h-[44px] min-w-[44px] inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-medium text-text-muted hover:text-text-primary bg-dark-deep hover:bg-dark-hover border border-dark-border transition-colors focus:outline-none focus:ring-2 focus:ring-green-vivid"
+            className="min-h-[38px] inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium text-text-muted hover:text-text-primary bg-dark-deep hover:bg-dark-hover border border-dark-border transition-colors focus:outline-none focus:ring-2 focus:ring-green-vivid"
             aria-label="Replay current lesson"
           >
-            <RotateCcw className="w-4 h-4 text-green-vivid" />
+            <RotateCcw className="w-3.5 h-3.5 text-green-vivid" />
             <span>Replay</span>
           </button>
 
@@ -276,18 +276,18 @@ export default function YouTubePlayer({
           <button
             type="button"
             onClick={handleCopyLink}
-            className="min-h-[44px] min-w-[44px] inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold text-text-primary bg-dark-deep hover:bg-dark-hover border border-dark-border hover:border-green-vivid/40 transition-colors focus:outline-none focus:ring-2 focus:ring-green-vivid"
+            className="min-h-[38px] inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold text-text-primary bg-dark-deep hover:bg-dark-hover border border-dark-border hover:border-green-vivid/40 transition-colors focus:outline-none focus:ring-2 focus:ring-green-vivid"
             aria-label="Copy direct video link"
             title="Copy direct video link"
           >
             {copied ? (
               <>
-                <Check className="w-4 h-4 text-green-vivid" />
-                <span className="text-green-vivid font-bold">Link Copied!</span>
+                <Check className="w-3.5 h-3.5 text-green-vivid" />
+                <span className="text-green-vivid font-bold">Copied!</span>
               </>
             ) : (
               <>
-                <Copy className="w-4 h-4 text-green-vivid" />
+                <Copy className="w-3.5 h-3.5 text-green-vivid" />
                 <span>Copy Link</span>
               </>
             )}
@@ -299,7 +299,7 @@ export default function YouTubePlayer({
           type="button"
           disabled={!nextLesson}
           onClick={handleNextClick}
-          className="min-h-[44px] min-w-[44px] inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold text-dark-deep bg-green-vivid hover:bg-green-hover disabled:bg-dark-deep disabled:text-text-dim disabled:border disabled:border-dark-border disabled:cursor-not-allowed transition-colors shadow-glow-sm focus:outline-none focus:ring-2 focus:ring-green-vivid"
+          className="min-h-[38px] inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs font-semibold text-dark-deep bg-green-vivid hover:bg-green-hover disabled:bg-dark-deep disabled:text-text-dim disabled:border disabled:border-dark-border disabled:cursor-not-allowed transition-colors shadow-glow-sm focus:outline-none focus:ring-2 focus:ring-green-vivid"
           aria-label="Go to next lesson"
         >
           <span className="hidden sm:inline">Next Lesson</span>

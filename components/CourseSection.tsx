@@ -66,22 +66,22 @@ export default function CourseSection() {
   }, [resetProgress, setCurrentLesson]);
 
   return (
-    <section id="lessons" className="pt-8 pb-16 lg:pt-12 lg:pb-24 bg-dark-bg relative">
+    <section id="lessons" className="pt-3 pb-12 lg:pt-4 lg:pb-16 bg-dark-bg relative">
       <span id="overview" className="sr-only" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
-        <div className="max-w-3xl mb-8 space-y-3">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-dark-card border border-green-vivid/30 text-green-vivid text-xs font-semibold tracking-wide shadow-glow-sm">
-            <Video className="w-3.5 h-3.5" />
-            <span>Interactive Course Player</span>
+        {/* Compact Header */}
+        <div className="mb-3 space-y-1">
+          <div className="flex items-center gap-2">
+            <h2 className="text-xl sm:text-2xl font-extrabold text-text-primary tracking-tight">
+              RevType Video Masterclass
+            </h2>
+            <span className="text-[11px] font-semibold text-green-vivid bg-green-surface px-2.5 py-0.5 rounded-full border border-green-vivid/30">
+              Official Lessons
+            </span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-text-primary tracking-tight">
-            RevType Video Masterclass
-          </h2>
-          <p className="text-base text-text-muted">
-            Watch each lesson in sequence without ever leaving the page.
-            Your progress is safely saved in your browser as you learn.
+          <p className="text-xs sm:text-sm text-text-muted">
+            Watch each lesson in sequence. Your progress is automatically saved as you learn.
           </p>
         </div>
 
