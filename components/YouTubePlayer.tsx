@@ -12,7 +12,9 @@ import {
   PartyPopper, 
   ExternalLink,
   Info,
-  CheckCircle2
+  CheckCircle2,
+  Copy,
+  Check
 } from 'lucide-react';
 
 interface YouTubePlayerProps {
