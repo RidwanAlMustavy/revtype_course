@@ -107,7 +107,7 @@ export default function CourseSection() {
               <button
                 type="button"
                 onClick={resumeProgress}
-                className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-semibold text-dark-deep bg-green-vivid hover:bg-green-hover transition-colors shadow-glow-sm"
+                className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-semibold text-white bg-green-vivid hover:bg-green-hover transition-colors shadow-glow-sm"
               >
                 <PlayCircle className="w-3.5 h-3.5" />
                 <span>Resume</span>

@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import './globals.css';
 
 export const viewport: Viewport = {
-  themeColor: '#171D19',
+  themeColor: '#F5F2FA',
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
@@ -47,16 +47,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="light">
       <head>
         <link rel="icon" href="/images/logo.png" />
         <link rel="apple-touch-icon" href="/images/logo.png" />
       </head>
-      <body className="bg-dark-bg text-text-primary antialiased selection:bg-green-vivid selection:text-dark-deep">
+      <body className="bg-dark-bg text-text-primary antialiased selection:bg-green-vivid selection:text-white">
         {/* Accessibility: Skip to Main Content Link */}
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 z-[100] px-4 py-2 rounded-lg bg-green-vivid text-dark-deep font-bold shadow-glow-md"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 z-[100] px-4 py-2 rounded-lg bg-green-vivid text-white font-bold shadow-glow-md"
         >
           Skip to main content
         </a>
