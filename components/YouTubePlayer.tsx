@@ -81,9 +81,9 @@ export default function YouTubePlayer({
         {/* Actual YouTube IFrame Mounting Target */}
         <div id="youtube-player-mount" className="w-full h-full" />
 
-        {/* Top mask overlay: cleanly conceals external YouTube channel logo, avatar, and share/copy buttons */}
+        {/* Top mask overlay: 100% opaque solid bar to completely conceal YouTube channel logo, avatar, and RevType titles */}
         <div 
-          className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-dark-bg/95 via-dark-bg/85 to-transparent z-[15] pointer-events-auto flex items-center justify-between px-4 select-none"
+          className="absolute top-0 left-0 right-0 h-20 sm:h-22 bg-[#0D0B14] z-[25] pointer-events-auto flex items-center justify-between px-4 sm:px-6 select-none border-b border-dark-border/80 shadow-md after:absolute after:top-full after:left-0 after:right-0 after:h-4 after:bg-gradient-to-b after:from-[#0D0B14]/80 after:to-transparent after:pointer-events-none"
           onClick={(e) => e.stopPropagation()}
           onContextMenu={(e) => {
             e.preventDefault();
@@ -91,17 +91,22 @@ export default function YouTubePlayer({
           }}
           aria-hidden="true"
         >
-          <div className="flex items-center gap-2.5">
-            <div className="w-6 h-6 rounded-md overflow-hidden bg-dark-deep border border-green-vivid/30 flex items-center justify-center shrink-0">
-              <img src="/images/logo.png" alt="Earn" className="w-full h-full object-cover" />
+          <div className="flex items-center gap-3 min-w-0">
+            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg overflow-hidden bg-dark-card border border-green-vivid/30 flex items-center justify-center shrink-0 shadow-sm">
+              <img src="/images/logo.png" alt="Earn Academy" className="w-full h-full object-cover" />
             </div>
-            <span className="text-xs font-bold tracking-wide px-3 py-1 rounded-full bg-dark-deep/95 text-green-vivid border border-dark-border shadow-md backdrop-blur-md">
-              Earn Academy • Lesson {currentLesson.order}
-            </span>
+            <div className="flex flex-col justify-center min-w-0">
+              <span className="text-xs sm:text-sm font-bold text-text-primary tracking-tight truncate">
+                {currentLesson.title}
+              </span>
+              <span className="text-[10px] sm:text-[11px] font-semibold text-green-vivid tracking-wide">
+                Earn Academy • Lesson {currentLesson.order}
+              </span>
+            </div>
           </div>
 
-          <div className="hidden sm:flex items-center gap-2">
-            <span className="text-[11px] font-medium text-text-dim px-2.5 py-1 rounded-full bg-dark-deep/90 border border-dark-border">
+          <div className="hidden sm:flex items-center gap-2 shrink-0">
+            <span className="text-[11px] font-semibold text-green-vivid px-3 py-1 rounded-full bg-green-surface border border-green-vivid/25">
               Official Walkthrough
             </span>
           </div>
