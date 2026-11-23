@@ -9,7 +9,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'RevType Academy — Step-by-Step Video Learning Guide',
+  title: 'RevType Academy',
   description:
     'Master RevType through an organized, sequential video learning course. Learn how micro tasks, the digital marketplace, courses, and wallet withdrawals operate.',
   keywords: [
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'RevType Team' }],
   openGraph: {
-    title: 'RevType Academy — Step-by-Step Video Learning Guide',
+    title: 'RevType Academy',
     description:
       'Learn how to navigate micro tasks, digital marketplaces, courses, and platform features safely on revtype.com.',
     type: 'website',
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'RevType Academy — Step-by-Step Video Learning Guide',
+    title: 'RevType Academy',
     description:
       'Learn how to navigate micro tasks, digital marketplaces, courses, and platform features safely on revtype.com.',
   },
