@@ -38,7 +38,7 @@ export default function YouTubePlayer({
 
   if (!currentLesson) {
     return (
-      <div className="aspect-video w-full rounded-card-lg bg-dark-card border border-dark-border flex flex-col items-center justify-center p-8 text-center space-y-3">
+      <div className="aspect-[9/16] md:aspect-video w-full max-w-[420px] md:max-w-none mx-auto rounded-card-lg bg-dark-card border border-dark-border flex flex-col items-center justify-center p-8 text-center space-y-3">
         <Info className="w-10 h-10 text-green-vivid" />
         <h4 className="text-lg font-bold text-text-primary">No Lesson Selected</h4>
         <p className="text-xs text-text-muted max-w-md">
@@ -68,10 +68,10 @@ export default function YouTubePlayer({
   };
 
   return (
-    <div className="flex flex-col space-y-2.5">
-      {/* Video Container (16:9 ratio) */}
+    <div className="flex flex-col space-y-2.5 max-w-[420px] md:max-w-none mx-auto w-full">
+      {/* Video Container: 9:16 aspect ratio on mobile for vertical Shorts, 16:9 on desktop */}
       <div 
-        className="relative aspect-video w-full rounded-card-lg bg-dark-deep border border-dark-border overflow-hidden shadow-card group select-none"
+        className="relative aspect-[9/16] md:aspect-video w-full max-h-[78vh] md:max-h-none rounded-card-lg bg-dark-deep border border-dark-border overflow-hidden shadow-card group select-none"
         onContextMenu={(e) => {
           e.preventDefault();
           e.stopPropagation();
