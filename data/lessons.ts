@@ -1,9 +1,9 @@
 import { Lesson } from '@/lib/course';
 
 /**
- * RevType Academy Lesson Catalog
+ * Earn Academy Lesson Catalog
  * 
- * Configured with authentic RevType tutorial videos.
+ * Configured with authentic tutorial videos.
  */
 export const LESSONS: Lesson[] = [
   {
@@ -11,43 +11,36 @@ export const LESSONS: Lesson[] = [
     order: 1,
     title: 'Manual Signup Guide',
     description:
-      'Learn how to register manually on RevType using email and password, verify credentials, and complete initial onboarding.',
+      'Learn how to register manually using email and password, verify credentials, and complete initial onboarding.',
     youtubeId: 'fHV3KFYbE3k',
     module: 'Getting Started',
     durationLabel: 'Shorts',
     enabled: true,
-    resources: [
-      { title: 'RevType Registration', url: 'https://revtype.com/' },
-      { title: 'Official Help Center', url: 'https://revtype.com/help' },
-    ],
+    resources: [],
   },
   {
     id: 'lesson-02-google-signup',
     order: 2,
     title: 'Google One-Click Signup',
     description:
-      'A quick and secure onboarding walkthrough using Google Authentication to create and connect your RevType account instantly.',
+      'A quick and secure onboarding walkthrough using Google Authentication to create and connect your account instantly.',
     youtubeId: 'Ad8dskLXB2Y',
     module: 'Getting Started',
     durationLabel: 'Shorts',
     enabled: true,
-    resources: [
-      { title: 'Account Security Guide', url: 'https://revtype.com/help' },
-    ],
+    resources: [],
   },
   {
-    id: 'lesson-03-revtype-tour',
+    id: 'lesson-03-platform-tour',
     order: 3,
-    title: 'RevType Platform Tour',
+    title: 'Earn Platform Tour',
     description:
-      'A complete visual walkthrough of the RevType platform interface, exploring the main dashboard, active feeds, menus, and feature hubs.',
+      'A complete visual walkthrough of the platform interface, exploring the main dashboard, active feeds, menus, and feature hubs.',
     youtubeId: 'cw3SjZrzhFQ',
     module: 'Getting Started',
     durationLabel: 'Shorts',
     enabled: true,
-    resources: [
-      { title: 'Dashboard Overview', url: 'https://revtype.com/' },
-    ],
+    resources: [],
   },
   {
     id: 'lesson-04-referrals',
@@ -59,9 +52,7 @@ export const LESSONS: Lesson[] = [
     module: 'Referral Program',
     durationLabel: 'Shorts',
     enabled: true,
-    resources: [
-      { title: 'Referral Policy', url: 'https://revtype.com/help' },
-    ],
+    resources: [],
   },
   {
     id: 'lesson-05-social-task-pinterest',
@@ -73,9 +64,7 @@ export const LESSONS: Lesson[] = [
     module: 'Micro Tasks & Earning',
     durationLabel: 'Shorts',
     enabled: true,
-    resources: [
-      { title: 'Task Guidelines', url: 'https://revtype.com/help' },
-    ],
+    resources: [],
   },
   {
     id: 'lesson-06-social-task-facebook-x',
@@ -87,9 +76,7 @@ export const LESSONS: Lesson[] = [
     module: 'Micro Tasks & Earning',
     durationLabel: 'Shorts',
     enabled: true,
-    resources: [
-      { title: 'Task Proof Guidelines', url: 'https://revtype.com/help' },
-    ],
+    resources: [],
   },
   {
     id: 'lesson-07-read-article-task',
@@ -101,23 +88,19 @@ export const LESSONS: Lesson[] = [
     module: 'Micro Tasks & Earning',
     durationLabel: 'Shorts',
     enabled: true,
-    resources: [
-      { title: 'Reading Tasks FAQ', url: 'https://revtype.com/help' },
-    ],
+    resources: [],
   },
   {
     id: 'lesson-08-games',
     order: 8,
     title: 'Playing & Earning with Games',
     description:
-      'Discover gaming opportunities on RevType: explore available games, understand point mechanics, and track your gameplay earnings.',
+      'Discover gaming opportunities: explore available games, understand point mechanics, and track your gameplay earnings.',
     youtubeId: 'pprh3GHMk5Q',
     module: 'Entertainment & Games',
     durationLabel: 'Shorts',
     enabled: true,
-    resources: [
-      { title: 'Games Hub', url: 'https://revtype.com/' },
-    ],
+    resources: [],
   },
   {
     id: 'lesson-09-wallet',
@@ -129,8 +112,6 @@ export const LESSONS: Lesson[] = [
     module: 'Wallet & Payouts',
     durationLabel: 'Shorts',
     enabled: true,
-    resources: [
-      { title: 'Withdrawal Rules', url: 'https://revtype.com/help' },
-    ],
+    resources: [],
   },
 ];

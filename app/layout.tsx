@@ -9,32 +9,31 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'RevType Academy',
+  title: 'Earn Academy',
   description:
-    'Master RevType through an organized, sequential video learning course. Learn how micro tasks, the digital marketplace, courses, and wallet withdrawals operate.',
+    'Master earning through an organized, sequential video learning course. Learn how micro tasks, tools, courses, and wallet withdrawals operate.',
   keywords: [
-    'RevType',
-    'RevType Academy',
-    'RevType Course',
+    'Earn',
+    'Earn Academy',
+    'Earn Course',
     'Micro Tasks',
-    'Digital Marketplace',
     'Video Tutorial',
-    'Learn RevType',
+    'Learn to Earn',
   ],
-  authors: [{ name: 'RevType Team' }],
+  authors: [{ name: 'Earn Team' }],
   openGraph: {
-    title: 'RevType Academy',
+    title: 'Earn Academy',
     description:
-      'Learn how to navigate micro tasks, digital marketplaces, courses, and platform features safely on revtype.com.',
+      'Learn how to navigate micro tasks, courses, and platform features safely.',
     type: 'website',
     locale: 'en_US',
-    siteName: 'RevType Academy',
+    siteName: 'Earn Academy',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'RevType Academy',
+    title: 'Earn Academy',
     description:
-      'Learn how to navigate micro tasks, digital marketplaces, courses, and platform features safely on revtype.com.',
+      'Learn how to navigate micro tasks, courses, and platform features safely.',
   },
   robots: {
     index: true,

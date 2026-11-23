@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { ExternalLink } from 'lucide-react';
 
 export default function Header() {
   return (
@@ -9,17 +8,14 @@ export default function Header() {
       <div className="max-w-[1720px] mx-auto px-3 sm:px-5 lg:px-8">
         <div className="flex items-center justify-between h-12 sm:h-13">
           {/* Logo / Wordmark */}
-          <a
-            href="#overview"
-            className="flex items-center gap-2.5 group focus:outline-none focus:ring-2 focus:ring-green-vivid rounded-lg p-1"
-          >
-            <div className="w-8 h-8 rounded-lg overflow-hidden flex items-center justify-center shadow-glow-sm group-hover:scale-105 transition-transform bg-dark-deep border border-green-vivid/30">
-              <img src="/images/logo.png" alt="RevType Academy Logo" className="w-full h-full object-cover" />
+          <div className="flex items-center gap-2.5">
+            <div className="w-8 h-8 rounded-lg overflow-hidden flex items-center justify-center shadow-glow-sm bg-dark-deep border border-green-vivid/30">
+              <img src="/images/logo.png" alt="Earn Academy Logo" className="w-full h-full object-cover" />
             </div>
             <div className="flex flex-col">
               <div className="flex items-center gap-1.5">
                 <span className="text-lg font-bold tracking-tight text-text-primary">
-                  RevType
+                  Earn
                 </span>
                 <span className="text-[10px] uppercase font-semibold tracking-wider px-1.5 py-0.2 rounded bg-green-surface text-green-vivid border border-green-vivid/30">
                   Academy
@@ -29,19 +25,6 @@ export default function Header() {
                 Official Video Learning Guide
               </span>
             </div>
-          </a>
-
-          {/* Action Button */}
-          <div className="flex items-center gap-4">
-            <a
-              href="https://revtype.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold text-text-primary bg-dark-card hover:bg-dark-hover border border-dark-border hover:border-green-vivid transition-all duration-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-green-vivid"
-            >
-              <span>Visit RevType</span>
-              <ExternalLink className="w-3.5 h-3.5 text-green-vivid" />
-            </a>
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 <?php
 /**
- * RevType Academy - Lightweight PHP 8.3 REST API Endpoint
+ * Earn Academy - Lightweight PHP 8.3 REST API Endpoint
  * Serves editable lesson JSON for Apache / Laragon environment
  */
 

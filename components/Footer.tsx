@@ -1,99 +1,45 @@
 import React from 'react';
-import { ExternalLink } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer className="bg-dark-deep border-t border-dark-border py-8">
-      <div className="max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      <div className="max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
         
         {/* Main Footer Row */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
           
           {/* Brand Info */}
-          <div className="md:col-span-5 space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl overflow-hidden flex items-center justify-center shadow-glow-sm bg-dark-deep border border-green-vivid/30">
-                <img src="/images/logo.png" alt="RevType Academy" className="w-full h-full object-cover" />
-              </div>
-              <div className="flex items-center gap-1.5">
-                <span className="text-lg font-bold tracking-tight text-text-primary">
-                  RevType
-                </span>
-                <span className="text-xs uppercase font-semibold tracking-wider px-1.5 py-0.5 rounded bg-green-surface text-green-vivid border border-green-vivid/30">
-                  Academy
-                </span>
-              </div>
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded-xl overflow-hidden flex items-center justify-center shadow-glow-sm bg-dark-deep border border-green-vivid/30">
+              <img src="/images/logo.png" alt="Earn Academy" className="w-full h-full object-cover" />
             </div>
-
-            <p className="text-xs sm:text-sm text-text-muted max-w-sm leading-relaxed">
-              Official video learning companion for revtype.com.
-              Learn how to navigate micro tasks, digital marketplaces, courses, and platform features safely.
-            </p>
+            <div className="flex items-center gap-1.5">
+              <span className="text-lg font-bold tracking-tight text-text-primary">
+                Earn
+              </span>
+              <span className="text-xs uppercase font-semibold tracking-wider px-1.5 py-0.5 rounded bg-green-surface text-green-vivid border border-green-vivid/30">
+                Academy
+              </span>
+            </div>
+            <span className="text-xs text-text-muted hidden sm:inline ml-2">
+              • Step-by-Step Video Learning Platform
+            </span>
           </div>
 
           {/* Quick Navigation */}
-          <div className="md:col-span-3 space-y-3">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-text-primary">
-              Navigation
-            </h4>
-            <ul className="space-y-2 text-xs text-text-muted">
-              <li>
-                <a href="#lessons" className="hover:text-green-vivid transition-colors">
-                  Video Lessons
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Official Resources */}
-          <div className="md:col-span-4 space-y-3">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-text-primary">
-              Official RevType Resources
-            </h4>
-            <ul className="space-y-2.5 text-xs text-text-muted">
-              <li>
-                <a
-                  href="https://revtype.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 hover:text-green-vivid transition-colors"
-                >
-                  <span>RevType Homepage</span>
-                  <ExternalLink className="w-3 h-3 text-text-dim" />
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://revtype.com/help"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 hover:text-green-vivid transition-colors"
-                >
-                  <span>Help & Knowledge Base</span>
-                  <ExternalLink className="w-3 h-3 text-text-dim" />
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://revtype.com/features/courses"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 hover:text-green-vivid transition-colors"
-                >
-                  <span>RevType Courses Platform</span>
-                  <ExternalLink className="w-3 h-3 text-text-dim" />
-                </a>
-              </li>
-            </ul>
+          <div>
+            <a href="#lessons" className="text-xs text-text-muted hover:text-green-vivid transition-colors">
+              Video Lessons
+            </a>
           </div>
 
         </div>
 
         {/* Bottom Copyright */}
-        <div className="pt-6 border-t border-dark-border/40 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-text-dim">
-          <p>© {currentYear} RevType Academy. All rights reserved.</p>
+        <div className="pt-4 border-t border-dark-border/40 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-text-dim">
+          <p>© {currentYear} Earn Academy. All rights reserved.</p>
           <p>Designed for responsive desktop and mobile devices.</p>
         </div>
 

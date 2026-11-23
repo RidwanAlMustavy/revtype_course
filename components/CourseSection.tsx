@@ -74,7 +74,7 @@ export default function CourseSection() {
           {/* Left: Title & Badge */}
           <div className="flex items-center gap-2">
             <h2 className="text-base sm:text-lg font-extrabold text-text-primary tracking-tight">
-              RevType Video Masterclass
+              Earn Video Masterclass
             </h2>
             <span className="text-[10px] font-semibold text-green-vivid bg-green-surface px-2 py-0.5 rounded-full border border-green-vivid/30 hidden sm:inline-block">
               Official Lessons
@@ -139,19 +139,9 @@ export default function CourseSection() {
                 Lessons Coming Soon
               </h3>
               <p className="text-sm text-text-muted leading-relaxed">
-                The course author is uploading unlisted YouTube video tutorials for RevType.
-                Please check back soon, or visit the official RevType documentation.
+                The course author is uploading video tutorials.
+                Please check back soon for updates.
               </p>
-            </div>
-            <div className="pt-2">
-              <a
-                href="https://revtype.com/help"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-bold text-dark-deep bg-green-vivid hover:bg-green-hover transition-colors shadow-glow-sm"
-              >
-                <span>Read Help Center Docs</span>
-              </a>
             </div>
           </div>
         ) : (

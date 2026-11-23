@@ -117,10 +117,10 @@ export default function YouTubePlayer({
         >
           <div className="flex items-center gap-2.5">
             <div className="w-6 h-6 rounded-md overflow-hidden bg-dark-deep border border-green-vivid/30 flex items-center justify-center shrink-0">
-              <img src="/images/logo.png" alt="RevType" className="w-full h-full object-cover" />
+              <img src="/images/logo.png" alt="Earn" className="w-full h-full object-cover" />
             </div>
             <span className="text-xs font-bold tracking-wide px-3 py-1 rounded-full bg-dark-deep/95 text-green-vivid border border-dark-border shadow-md backdrop-blur-md">
-              RevType Academy • Lesson {currentLesson.order}
+              Earn Academy • Lesson {currentLesson.order}
             </span>
           </div>
 
@@ -217,28 +217,19 @@ export default function YouTubePlayer({
                 Course Completed!
               </h4>
               <p className="text-xs sm:text-sm text-text-muted max-w-md">
-                Congratulations on finishing all available RevType video walkthroughs!
-                You are ready to explore the platform with confidence.
+                Congratulations on finishing all available video lessons!
+                You have completed the entire course.
               </p>
             </div>
             <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
               <button
                 type="button"
                 onClick={onReplayCourse}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-semibold text-text-primary bg-dark-card border border-dark-border hover:border-green-vivid transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl text-xs font-semibold text-text-primary bg-dark-card border border-dark-border hover:border-green-vivid transition-colors"
               >
                 <RotateCcw className="w-4 h-4 text-green-vivid" />
                 <span>Replay Course</span>
               </button>
-              <a
-                href="https://revtype.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold text-dark-deep bg-green-vivid hover:bg-green-hover transition-colors shadow-glow-sm"
-              >
-                <span>Visit RevType Platform</span>
-                <ExternalLink className="w-4 h-4" />
-              </a>
             </div>
           </div>
         )}
