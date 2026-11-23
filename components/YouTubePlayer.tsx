@@ -113,7 +113,7 @@ export default function YouTubePlayer({
             <button
               type="button"
               onClick={handleManualPlay}
-              className="w-18 h-18 sm:w-20 sm:h-20 rounded-full bg-green-vivid hover:bg-green-hover text-white flex items-center justify-center transition-all duration-200 shadow-glow-lg hover:scale-105 focus:outline-none focus:ring-4 focus:ring-green-vivid/50"
+              className="w-18 h-18 sm:w-20 sm:h-20 rounded-full bg-green-vivid hover:bg-green-hover text-dark-deep flex items-center justify-center transition-all duration-200 shadow-glow-lg hover:scale-105 focus:outline-none focus:ring-4 focus:ring-green-vivid/50"
               aria-label={`Play ${currentLesson.title}`}
             >
               <Play className="w-8 h-8 sm:w-9 sm:h-9 fill-current ml-1" />
@@ -147,7 +147,7 @@ export default function YouTubePlayer({
                 player.dismissAutoplayBlocked();
                 player.playVideo();
               }}
-              className="px-3 py-1.5 rounded-lg text-xs font-bold text-white bg-green-vivid hover:bg-green-hover transition-colors"
+              className="px-3 py-1.5 rounded-lg text-xs font-bold text-dark-deep bg-green-vivid hover:bg-green-hover transition-colors"
             >
               Play Next Lesson
             </button>
@@ -243,7 +243,7 @@ export default function YouTubePlayer({
           type="button"
           disabled={!nextLesson}
           onClick={handleNextClick}
-          className="min-h-[38px] inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs font-semibold text-white bg-green-vivid hover:bg-green-hover disabled:bg-dark-deep disabled:text-text-dim disabled:border disabled:border-dark-border disabled:cursor-not-allowed transition-colors shadow-glow-sm focus:outline-none focus:ring-2 focus:ring-green-vivid"
+          className="min-h-[38px] inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs font-bold text-dark-deep bg-green-vivid hover:bg-green-hover disabled:bg-dark-deep disabled:text-text-dim disabled:border disabled:border-dark-border disabled:cursor-not-allowed transition-colors shadow-glow-sm focus:outline-none focus:ring-2 focus:ring-green-vivid"
           aria-label="Go to next lesson"
         >
           <span className="hidden sm:inline">Next Lesson</span>

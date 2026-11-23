@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E9D5FF" />
+      <stop offset="50%" stop-color="#C084FC" />
+      <stop offset="100%" stop-color="#A855F7" />
+    </linearGradient>
+    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C084FC" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#7E22CE" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="108" fill="#13111C" />
+  <rect width="512" height="512" rx="108" fill="url(#glowGrad)" />
+
+  <!-- Monogram 'E' with Aerodynamic Futuristic Wings -->
+  <g transform="translate(40, 36)">
+    <!-- Top Wing -->
+    <path d="M 120 90 L 320 90 C 355 90 380 115 370 145 C 362 168 340 180 310 180 L 175 180 L 120 90 Z" fill="url(#purpleGrad)" />
+    
+    <!-- Middle Wing / Blade -->
+    <path d="M 95 210 L 265 210 C 290 210 305 225 298 245 C 292 262 275 272 250 272 L 150 272 L 95 210 Z" fill="url(#purpleGrad)" />
+
+    <!-- Bottom Wing -->
+    <path d="M 70 302 L 325 302 C 358 302 378 325 368 355 C 360 378 338 392 305 392 L 90 392 C 60 392 48 370 60 342 L 70 302 Z" fill="url(#purpleGrad)" />
+
+    <!-- Dynamic Slanted Spine Connecting the Flow -->
+    <path d="M 120 90 L 165 90 L 115 392 L 70 392 Z" fill="url(#purpleGrad)" opacity="0.95" />
+  </g>
+</svg>
