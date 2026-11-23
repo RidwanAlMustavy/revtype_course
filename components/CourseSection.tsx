@@ -66,11 +66,11 @@ export default function CourseSection() {
   }, [resetProgress, setCurrentLesson]);
 
   return (
-    <section id="lessons" className="py-20 lg:py-28 bg-dark-bg relative">
+    <section id="lessons" className="pt-4 pb-16 lg:pt-6 lg:pb-24 bg-dark-bg relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="max-w-3xl mb-12 space-y-4">
+        <div className="max-w-3xl mb-8 space-y-3">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-dark-card border border-green-vivid/30 text-green-vivid text-xs font-semibold tracking-wide shadow-glow-sm">
             <Video className="w-3.5 h-3.5" />
             <span>Interactive Course Player</span>

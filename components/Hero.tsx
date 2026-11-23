@@ -13,7 +13,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="overview" className="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-32">
+    <section id="overview" className="relative overflow-hidden pt-8 pb-8 lg:pt-16 lg:pb-10">
       {/* Background radial glow & aesthetic curves inspired by reference */}
       <div
         className="absolute top-1/4 right-5 w-96 h-96 bg-green-vivid/10 rounded-full blur-3xl pointer-events-none -z-10"
