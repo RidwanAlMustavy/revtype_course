@@ -37,6 +37,28 @@ export default function YouTubePlayer({
   onReplayCourse,
 }: YouTubePlayerProps) {
   const [hasStarted, setHasStarted] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyLink = async () => {
+    if (!currentLesson) return;
+    const videoUrl = `https://youtube.com/shorts/${currentLesson.youtubeId}`;
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(videoUrl);
+      } else {
+        const input = document.createElement('input');
+        input.value = videoUrl;
+        document.body.appendChild(input);
+        input.select();
+        document.execCommand('copy');
+        document.body.removeChild(input);
+      }
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // ignore
+    }
+  };
 
   if (!currentLesson) {
     return (
@@ -108,36 +130,6 @@ export default function YouTubePlayer({
             </span>
           </div>
         </div>
-
-        {/* Middle Protection Shield: completely prevents right-clicking to copy video URL, enables click-to-play/pause */}
-        <div
-          className="absolute top-16 left-0 right-0 bottom-12 z-[10] cursor-pointer"
-          onClick={() => {
-            if (player.isPlaying) {
-              player.pauseVideo();
-            } else {
-              player.playVideo();
-            }
-          }}
-          onContextMenu={(e) => {
-            e.preventDefault();
-            e.stopPropagation();
-          }}
-        />
-
-        {/* Bottom-left Shield: completely hides and disables the YouTube Shorts 'Copy Link' chain icon */}
-        <div
-          className="absolute bottom-0 left-0 w-20 h-12 bg-black rounded-bl-card-lg z-[15] pointer-events-auto select-none cursor-default"
-          onClick={(e) => {
-            e.stopPropagation();
-            e.preventDefault();
-          }}
-          onContextMenu={(e) => {
-            e.preventDefault();
-            e.stopPropagation();
-          }}
-          aria-hidden="true"
-        />
 
         {/* Poster / Play Overlay before first play */}
         {!hasStarted && !player.isPlaying && (
@@ -268,16 +260,39 @@ export default function YouTubePlayer({
           <span className="hidden sm:inline">Previous Lesson</span>
         </button>
 
-        {/* Center: Replay Current Lesson */}
-        <button
-          type="button"
-          onClick={() => player.replayVideo()}
-          className="min-h-[44px] min-w-[44px] inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-medium text-text-muted hover:text-text-primary bg-dark-deep hover:bg-dark-hover border border-dark-border transition-colors focus:outline-none focus:ring-2 focus:ring-green-vivid"
-          aria-label="Replay current lesson"
-        >
-          <RotateCcw className="w-4 h-4 text-green-vivid" />
-          <span>Replay</span>
-        </button>
+        {/* Center: Replay & Copy Link Controls */}
+        <div className="flex items-center gap-2">
+          <button
+            type="button"
+            onClick={() => player.replayVideo()}
+            className="min-h-[44px] min-w-[44px] inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-medium text-text-muted hover:text-text-primary bg-dark-deep hover:bg-dark-hover border border-dark-border transition-colors focus:outline-none focus:ring-2 focus:ring-green-vivid"
+            aria-label="Replay current lesson"
+          >
+            <RotateCcw className="w-4 h-4 text-green-vivid" />
+            <span>Replay</span>
+          </button>
+
+          {/* Copy Link Button */}
+          <button
+            type="button"
+            onClick={handleCopyLink}
+            className="min-h-[44px] min-w-[44px] inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold text-text-primary bg-dark-deep hover:bg-dark-hover border border-dark-border hover:border-green-vivid/40 transition-colors focus:outline-none focus:ring-2 focus:ring-green-vivid"
+            aria-label="Copy direct video link"
+            title="Copy direct video link"
+          >
+            {copied ? (
+              <>
+                <Check className="w-4 h-4 text-green-vivid" />
+                <span className="text-green-vivid font-bold">Link Copied!</span>
+              </>
+            ) : (
+              <>
+                <Copy className="w-4 h-4 text-green-vivid" />
+                <span>Copy Link</span>
+              </>
+            )}
+          </button>
+        </div>
 
         {/* Right: Next Lesson */}
         <button
@@ -296,14 +311,35 @@ export default function YouTubePlayer({
       {/* Lesson Details & Supplementary Material */}
       <div className="p-6 rounded-card bg-dark-card border border-dark-border space-y-4">
         <div className="flex flex-wrap items-center justify-between gap-2">
-          <span className="text-xs font-bold text-green-vivid bg-green-surface px-3 py-1 rounded-full border border-green-vivid/20">
-            {currentLesson.module} • Lesson {currentLesson.order}
-          </span>
-          {currentLesson.durationLabel && (
-            <span className="text-xs text-text-dim">
-              Estimated duration: {currentLesson.durationLabel}
+          <div className="flex items-center gap-2">
+            <span className="text-xs font-bold text-green-vivid bg-green-surface px-3 py-1 rounded-full border border-green-vivid/20">
+              {currentLesson.module} • Lesson {currentLesson.order}
             </span>
-          )}
+            {currentLesson.durationLabel && (
+              <span className="text-xs text-text-dim">
+                Estimated duration: {currentLesson.durationLabel}
+              </span>
+            )}
+          </div>
+
+          <button
+            type="button"
+            onClick={handleCopyLink}
+            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-medium text-text-muted hover:text-green-vivid bg-dark-deep border border-dark-border hover:border-green-vivid/40 transition-colors"
+            title="Copy video link"
+          >
+            {copied ? (
+              <>
+                <Check className="w-3.5 h-3.5 text-green-vivid" />
+                <span className="text-green-vivid font-semibold">Copied!</span>
+              </>
+            ) : (
+              <>
+                <Copy className="w-3.5 h-3.5" />
+                <span>Copy Link</span>
+              </>
+            )}
+          </button>
         </div>
 
         <h3 className="text-xl sm:text-2xl font-bold text-text-primary">
