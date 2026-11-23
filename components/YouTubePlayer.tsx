@@ -92,7 +92,7 @@ export default function YouTubePlayer({
   };
 
   return (
-    <div className="flex flex-col space-y-3.5">
+    <div className="flex flex-col space-y-2.5">
       {/* Video Container (16:9 ratio) */}
       <div 
         className="relative aspect-video w-full rounded-card-lg bg-dark-deep border border-dark-border overflow-hidden shadow-card group select-none"

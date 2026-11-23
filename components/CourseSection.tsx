@@ -5,10 +5,9 @@ import { LESSONS } from '@/data/lessons';
 import { useCourseProgress } from '@/hooks/useCourseProgress';
 import { useYouTubePlayer } from '@/hooks/useYouTubePlayer';
 import { getNextLesson, getPreviousLesson } from '@/lib/course';
-import CourseProgress from './CourseProgress';
 import YouTubePlayer from './YouTubePlayer';
 import LessonPlaylist from './LessonPlaylist';
-import { Video, Sparkles, BookOpen, Clock } from 'lucide-react';
+import { Video, Sparkles, BookOpen, Clock, PlayCircle, RotateCcw } from 'lucide-react';
 
 export default function CourseSection() {
   const {
@@ -66,23 +65,67 @@ export default function CourseSection() {
   }, [resetProgress, setCurrentLesson]);
 
   return (
-    <section id="lessons" className="pt-3 pb-12 lg:pt-4 lg:pb-16 bg-dark-bg relative">
+    <section id="lessons" className="pt-2 pb-8 lg:pt-2.5 lg:pb-12 bg-dark-bg relative">
       <span id="overview" className="sr-only" />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1720px] mx-auto px-3 sm:px-5 lg:px-8">
         
-        {/* Compact Header */}
-        <div className="mb-3 space-y-1">
+        {/* Unified Top Action & Progress Bar */}
+        <div className="rounded-xl bg-dark-card border border-dark-border px-3.5 py-2 shadow-sm mb-3 flex flex-wrap items-center justify-between gap-3">
+          {/* Left: Title & Badge */}
           <div className="flex items-center gap-2">
-            <h2 className="text-xl sm:text-2xl font-extrabold text-text-primary tracking-tight">
+            <h2 className="text-base sm:text-lg font-extrabold text-text-primary tracking-tight">
               RevType Video Masterclass
             </h2>
-            <span className="text-[11px] font-semibold text-green-vivid bg-green-surface px-2.5 py-0.5 rounded-full border border-green-vivid/30">
+            <span className="text-[10px] font-semibold text-green-vivid bg-green-surface px-2 py-0.5 rounded-full border border-green-vivid/30 hidden sm:inline-block">
               Official Lessons
             </span>
           </div>
-          <p className="text-xs sm:text-sm text-text-muted">
-            Watch each lesson in sequence. Your progress is automatically saved as you learn.
-          </p>
+
+          {/* Right: Progress & Controls */}
+          <div className="flex items-center gap-3 ml-auto">
+            <div className="flex items-center gap-2">
+              <span className="text-[11px] font-bold text-text-primary">
+                {stats.completedCount}/{stats.playableLessons}
+              </span>
+              <span className="text-[10px] text-text-muted hidden sm:inline">({stats.completionPercentage}%)</span>
+              <div
+                role="progressbar"
+                aria-valuenow={stats.completionPercentage}
+                aria-valuemin={0}
+                aria-valuemax={100}
+                aria-label="Course completion progress"
+                className="w-20 sm:w-32 h-1.5 rounded-full bg-dark-deep border border-dark-border overflow-hidden"
+              >
+                <div
+                  className="h-full bg-gradient-to-r from-green-vivid to-green-hover transition-all duration-500 rounded-full"
+                  style={{ width: `${stats.completionPercentage}%` }}
+                />
+              </div>
+            </div>
+
+            {hasSavedProgress && !stats.isCompleted && (
+              <button
+                type="button"
+                onClick={resumeProgress}
+                className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-semibold text-dark-deep bg-green-vivid hover:bg-green-hover transition-colors shadow-glow-sm"
+              >
+                <PlayCircle className="w-3.5 h-3.5" />
+                <span>Resume</span>
+              </button>
+            )}
+
+            {stats.completedCount > 0 && (
+              <button
+                type="button"
+                onClick={resetProgress}
+                className="inline-flex items-center gap-1 px-2 py-1 rounded-lg text-[11px] font-medium text-text-muted hover:text-text-primary bg-dark-deep hover:bg-dark-hover border border-dark-border transition-colors"
+                title="Reset all progress stored on this device"
+              >
+                <RotateCcw className="w-3 h-3" />
+                <span>Reset</span>
+              </button>
+            )}
+          </div>
         </div>
 
         {/* Empty State Guard if 0 Playable Lessons (PRD Section 5) */}
@@ -113,16 +156,8 @@ export default function CourseSection() {
           </div>
         ) : (
           <div>
-            {/* Progress Bar & Actions Strip */}
-            <CourseProgress
-              stats={stats}
-              hasSavedProgress={hasSavedProgress}
-              onResume={resumeProgress}
-              onReset={resetProgress}
-            />
-
             {/* Main Interactive Grid: Video Player (65%) & Playlist (35%) */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-3.5 lg:gap-4 items-start">
               
               {/* Left / Top: Video Player & Details (approx 65% width) */}
               <div className="lg:col-span-8 w-full">
