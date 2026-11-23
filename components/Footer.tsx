@@ -45,23 +45,8 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#features" className="hover:text-green-vivid transition-colors">
-                  Course Curriculum
-                </a>
-              </li>
-              <li>
                 <a href="#lessons" className="hover:text-green-vivid transition-colors">
-                  Interactive Video Player
-                </a>
-              </li>
-              <li>
-                <a href="#how-it-works" className="hover:text-green-vivid transition-colors">
-                  How RevType Works
-                </a>
-              </li>
-              <li>
-                <a href="#faq" className="hover:text-green-vivid transition-colors">
-                  FAQ
+                  Video Lessons
                 </a>
               </li>
             </ul>

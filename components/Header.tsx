@@ -8,10 +8,7 @@ export default function Header() {
 
   const navLinks = [
     { label: 'Overview', href: '#overview' },
-    { label: 'Features', href: '#features' },
-    { label: 'Lessons', href: '#lessons' },
-    { label: 'How It Works', href: '#how-it-works' },
-    { label: 'FAQ', href: '#faq' },
+    { label: 'Video Lessons', href: '#lessons' },
   ];
 
   return (
