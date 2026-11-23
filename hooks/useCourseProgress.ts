@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import { Lesson, CourseStats, calculateCourseStats } from '@/lib/course';
 
-const STORAGE_KEY = 'revtype_academy_progress_v1';
+const STORAGE_KEY = 'earn_academy_progress_v2';
 
 export interface UseCourseProgressReturn {
   currentLessonId: string;
