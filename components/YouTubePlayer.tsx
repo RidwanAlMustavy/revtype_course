@@ -131,9 +131,12 @@ export default function YouTubePlayer({
                 {currentLesson.title}
               </h3>
             </div>
-            <p className="text-xs text-text-dim">
-              Click play to load and watch video
-            </p>
+            <div className="pt-1">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-green-surface border border-green-vivid/60 text-green-hover text-xs font-bold shadow-glow-sm animate-pulse md:animate-none md:bg-dark-card/60 md:border-dark-border md:text-text-muted md:font-medium md:shadow-none transition-all">
+                <span className="w-2 h-2 rounded-full bg-green-vivid shadow-glow-sm shrink-0" />
+                <span>Click play to load and watch video</span>
+              </div>
+            </div>
           </div>
         )}
 
